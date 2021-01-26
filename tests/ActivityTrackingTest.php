@@ -2,6 +2,7 @@
 
 
 use BookStack\Entities\Models\Book;
+use Illuminate\Support\Facades\DB;
 
 class ActivityTrackingTest extends BrowserKitTest
 {

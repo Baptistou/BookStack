@@ -48,6 +48,7 @@ if (count($mysql_host_exploded) > 1) {
     $mysql_port = intval($mysql_host_exploded[1]);
 }
 
+
 return [
 
     // Default database connection name.
@@ -81,10 +82,11 @@ return [
         'mysql_testing' => [
             'driver'    => 'mysql',
             'url' => env('TEST_DATABASE_URL'),
-            'host'      => '127.0.0.1',
+            'host'      => $mysql_host,
             'database'  => 'bookstack-test',
             'username'  => env('MYSQL_USER', 'bookstack-test'),
             'password'  => env('MYSQL_PASSWORD', 'bookstack-test'),
+            'port'      => $mysql_port,
             'charset'   => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix'    => '',
