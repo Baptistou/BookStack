@@ -39,6 +39,8 @@ services:
   node:
     image: node:alpine
     working_dir: /app
+    # On Linux, these lines ensure file ownership is set to your host user/group
+    user: "${DOCKER_UID}:${DOCKER_GID}"
     volumes:
       - ./:/app
     entrypoint: /app/dev/docker/entrypoint.node.sh
